@@ -41,10 +41,17 @@ def home():
         return render_template('home.html', prints=prints)
 """
 
-@app.route('/troubleshoot')
-def troubleshoot():
+@app.route('/troubleshootFailed')
+def troubleshootFailed():
     try:
-        return render_template('troubleshooting.html')
+        return render_template('troubleshootingFailed.html')
+    except:
+        return 'There was a problem redirecting'
+
+@app.route('/troubleshootQuality')
+def troubleshootQuality():
+    try:
+        return render_template('troubleshootingQuality.html')
     except:
         return 'There was a problem redirecting'
 
