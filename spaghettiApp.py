@@ -87,7 +87,6 @@ def upload_file():
 def uploaded_file(filename):
     os.system('cd /Users/ethannguyen/Desktop/College/SyBBURE/2020\ Summer/darknet; ./darknet detect cfg/model.cfg 3209.neg_32213.22300.weights /Users/ethannguyen/Desktop/College/SyBBURE/2020\ Summer/VHacksSummer/upload' + filename)
     os.system('mv /Users/ethannguyen/Desktop/College/SyBBURE/2020\ Summer/darknet/predictions.jpg /Users/ethannguyen/Desktop/College/SyBBURE/2020\ Summer/VHacksSummer/upload')
-    
     return send_from_directory(app.config['UPLOAD_FOLDER'],
                                'predictions.jpg')
 
