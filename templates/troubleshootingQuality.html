@@ -1,9 +1,129 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block head %}
+<title>Troubleshooting Guide: Low Quality Prints</title>
+{% endblock %} {% block body %}
+<div class="mainText">
+    <h1>Troubleshooting Guide: Low Quality Prints</h1>
 
-{% block head %}
-    <title>Troubleshooting Guide</title>
-{% endblock %}
+    <p>If you are using Ultimaker Cura, before following the steps below go to:</p>
+    <h4>Preferences > Configure Cura > Settings > Check All </h4>
+    <p>To turn on visibility for all settings.</p>
+    <ul>
+        <li>Solutions for Under-extrusion:</li>
+        <ul>
+            <li>Check filament diameters: materials properties.</li>
+            <ul>
+                <li>In Ultimaker Cura: preferences > configure Cura > materials > diameter</li>
 
-{% block body %}
-    <h1>Troubleshooting Guide</h1>
+            </ul>
+            <li>Increase extrusion multiplier.</li>
+            <ul>
+                <li>In Ultimaker Cura: settings > flow rate compensation factor</li>
+            </ul>
+        </ul>
+        <li>Solutions for Over-extrusion:</li>
+        <ul>
+            <li>Check filament diameters: materials properties.</li>
+            <ul>
+                <li>In Ultimaker Cura: preferences > configure Cura > materials > diameter</li>
+
+            </ul>
+            <li>Decrease extrusion multiplier.</li>
+            <ul>
+                <li>In Ultimaker Cura: settings > flow rate compensation factor</li>
+            </ul>
+        </ul>
+        <li>Solutions to Stringing/Oozing</li>
+        <ul>
+            <li> Retraction Distance</li>
+            <ul>
+                <li>Increase retraction distance by 1 mm at a time</li>
+                <li>In Ultimaker Cura: settings > travel > retraction distance</li>
+            </ul>
+            <li>Retraction Speed</li>
+            <ul>
+                <li>Increase retraction speed</li>
+                <li> Ideal range is 1200-6000 mm/min or 20-100 mm/s</li>
+                <li>Settings > travel > retraction speed</li>
+            </ul>
+            <li>Temperature</li>
+            <ul>
+                <li>Decrease temperature by 5-10 degrees</li>
+                <li>Settings > materials > printing temperature</li>
+            </ul>
+            <li>Long movements over open spaces can cause stringing/oozing</li>
+            <ul>
+                <li>Best way to fix this is to change your design: your software should optimize when slicing for the shortest path possible.</li>
+            </ul>
+            <li>Movement speed</li>
+            <ul>
+                <li>If your printer can handle it, try increasing the speed</li>
+                <li>Tune while print is running and adjust speed</li>
+                <li>Settings > Speed > Print Speed</li>
+            </ul>
+
+        </ul>
+        <li>Solutions to Overheating</li>
+        <ul>
+            <li>Insufficient Cooling</li>
+            <ul>
+                <li>Increase fan power</li>
+                <li>Settings > Cooling >Fan Speed</li>
+            </ul>
+            <li>Temperature</li>
+            <ul>
+                <li>Decrease temperature by 5-10 degrees</li>
+                <li>Settings > materials > printing temperature</li>
+            </ul>
+            <li>Movement Speed</li>
+            <ul>
+                <li>Decrease the speed</li>
+                <li>Tune while print is running and adjust speed</li>
+                <li>Settings > Speed > Print Speed</li>
+            </ul>
+            <li>Printing multiple parts at once allows for more time to cool</li>
+        </ul>
+        <li>Solutions to Layer Shifting</li>
+
+        <li>Solutions to Layer Seperation</li>
+
+        <li>Solutions to Weak infill</li>
+
+        <li>Solutions to Blobs</li>
+
+        <li>Solutions to Gaps between infill and outline</li>
+
+        <li>Solutions to Curling or rough corners</li>
+
+        <li>Solutions to Scars on top surface</li>
+
+        <li>Solutions to Elephant foot</li>
+        <ul>
+            <li>Lower build plate temp</li>
+            <li>Add adhesion (brim is sufficient)</li>
+        </ul>
+
+        <li>Solutions to Gaps in floor corners</li>
+
+        <li>Solutions to Lines in side of print</li>
+
+        <li>Solutions to Vibrations and Ringing</li>
+
+        <li>Solutions to Gaps in thin walls</li>
+
+        <li>Solutions to Small features not printed</li>
+
+        <li>Solutions to Inconsistent extrusion</li>
+
+        <li>Solutions to Warping</li>
+
+        <li>Solutions to Poor surface above supports</li>
+
+        <li>Solutions to Poor bridging</li>
+
+        <li>Solutions to Dimensional inaccuracy</li>
+
+
+    </ul>
+
+</div>
 {% endblock %}

@@ -1,9 +1,40 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block head %}
+<title>Troubleshooting Guide</title>
+{% endblock %} {% block body %}
+<div class="mainText">
+    <h1>Troubleshooting Guide: Failed Prints</h1>
 
-{% block head %}
-    <title>Troubleshooting Guide</title>
-{% endblock %}
+    <p>If you are using Ultimaker Cura, before following the steps below go to:</p>
+    <h4>Preferences > Configure Cura > Settings > Check All </h4>
+    <p>To turn on visibility for all settings.</p>
 
-{% block body %}
-    <h1>Troubleshooting Guide</h1>
+
+    <ul>
+        <li>Solutions when print is not sticking to bed:</li>
+        <ul>
+            <li>Clean build plate</li>
+            <li>Printer may not be leveled closely enough, re-level the build plate.</li>
+        </ul>
+        <li>Solutions when not extruding at start of print or mid-print:</li>
+        <ul>
+            <li>Grinding filament:</li>
+            <ul>
+                <li>Clean out extruder box.</li>
+                <li>Lessen tension on filament, usually a screw you can adjust: check documentation for your specific model.</li>
+            </ul>
+            <li>Clogged extruder:</li>
+            <ul>
+                <li>Heat extruder and de-clog with thin wire often found in maintenance kit.</li>
+                <li>Perform a hot pull cold pull. Ultimaker has a good guide for this procedure.</li>
+            </ul>
+        </ul>
+        <li>Solutions when supports are knocked over:</li>
+        <ul>
+            <li>Make sure the printer is leveled evenly.</li>
+            <li>Add adhesion (raft works best).</li>
+            <li>Decrease the build plate temperature.</li>
+        </ul>
+    </ul>
+
+</div>
 {% endblock %}
