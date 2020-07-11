@@ -76,11 +76,9 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            
-            # os.system('mv /Users/ethannguyen/Desktop/College/SyBBURE/2020\ Summer/VHacksSummer/upload/' + filename + ' /Users/ethannguyen/Desktop/College/SyBBURE/2020\ Summer/darknet/')
-            # os.system('cd /Users/ethannguyen/Desktop/College/SyBBURE/2020\ Summer/darknet; ./darknet detect cfg/model.cfg model.weights ' + filename)
-            # os.system('mv /Users/ethannguyen/Desktop/College/SyBBURE/2020\ Summer/darknet/predictions.jpg /Users/ethannguyen/Desktop/College/SyBBURE/2020\ Summer/VHacksSummer/upload')
-
+            os.system('cp static/' + filename + ' /Users/ethannguyen/Desktop/College/SyBBURE/2020\ Summer/darknet/')
+            os.system('cd ..; cd darknet; ./darknet detect cfg/model.cfg model.weights ' + filename)
+            os.system('cp /Users/ethannguyen/Desktop/College/SyBBURE/2020\ Summer/darknet/predictions.jpg /Users/ethannguyen/Desktop/College/SyBBURE/2020\ Summer/VHacksSummer/static/' + filename)
             status = "Spaghetti"    # Get status from machine
             img = os.path.join(app.config['UPLOAD_FOLDER'], filename) # Put location of image returned by machine here
             return render_template('upload.html', img=img, status=status)
