@@ -78,3 +78,13 @@ h4 {
         font-size: 18px;
     }
 }
+
+.imagef {
+    width: 100px;
+    min-height: 5px;
+    max-height: auto;
+    float: none;
+    padding: 3px;
+    margin: 0 15px 0 0;
+    vertical-align: middle;
+}
