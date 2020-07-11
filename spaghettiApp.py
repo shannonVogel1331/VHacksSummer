@@ -13,12 +13,13 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///prints.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
 
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+"""
 class printPhoto(db.Model): # Feel free to add more attributes as y'all see fit
     id = db.Column(db.Integer, primary_key=True)
     path = db.Column(db.String(200), nullable=False)
@@ -27,24 +28,6 @@ class printPhoto(db.Model): # Feel free to add more attributes as y'all see fit
     
     def __repr__(self):
         return '<Task %r>' % self.id
-
-
-"""
-    if request.method == 'POST':
-        img_path = request.form['content']  # Have this reference an upload form
-        print_status = ""   # Machine output here
-        new_print = printPhoto(path=img_path, status=print_status)
-
-        try:
-            db.session.add(new_print)
-            db.session.commit()
-            return redirect('/')
-        except:
-            return 'There was an issue adding your task'
-
-    else:
-        prints = printPhoto.query.order_by(printPhoto.date_created).all()
-        return render_template('home.html', prints=prints)
 """
 
 @app.route('/troubleshootFailed')
