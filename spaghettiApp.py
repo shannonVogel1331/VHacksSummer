@@ -3,8 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from werkzeug.utils import secure_filename
 import os
+import subprocess
 
-UPLOAD_FOLDER = 'upload'
+UPLOAD_FOLDER = 'static'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 app = Flask(__name__)
@@ -74,9 +75,12 @@ def upload_file():
             return render_template('home.html', message="Please select a file.")
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
+            status = "Spaghetti"    # Get status from machine
+            img = os.path.join(app.config['UPLOAD_FOLDER'], filename) # Put location of image returned by machine here
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('uploaded_file',
-                                    filename=filename))
+            return render_template('upload.html', img=img, status=status)
+            # return redirect(url_for('uploaded_file',
+            #                         filename=filename))
     return render_template('home.html', message="Upload")
 
 @app.route('/uploads/<filename>')
