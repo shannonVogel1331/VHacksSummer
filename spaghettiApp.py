@@ -75,9 +75,9 @@ def upload_file():
             return render_template('home.html', message="Please select a file.")
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             status = "Spaghetti"    # Get status from machine
             img = os.path.join(app.config['UPLOAD_FOLDER'], filename) # Put location of image returned by machine here
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return render_template('upload.html', img=img, status=status)
             # return redirect(url_for('uploaded_file',
             #                         filename=filename))
