@@ -32,3 +32,10 @@ def index():
     else:
         prints = printPhoto.query.order_by(printPhoto.date_created).all()
         return render_template('home.html', prints=prints)
+
+@app.route('/troubleshoot')
+def troubleshoot():
+    try:
+        return redirect('/troubleshoot')
+    except:
+        return 'There was a problem redirecting'
