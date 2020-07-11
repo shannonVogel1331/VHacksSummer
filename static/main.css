@@ -17,6 +17,11 @@ h4 {
     text-align: center;
 }
 
+h3 {
+    color: gold;
+    text-align: center;
+}
+
 .my-button {
     background-color: white;
     border: none;
